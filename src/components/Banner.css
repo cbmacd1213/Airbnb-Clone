@@ -14,6 +14,11 @@
     width: 300px;
 }
 
+.banner_search {
+    display: flex;
+    flex-direction: column;
+}
+
 .banner_searchButton {
     background-color: white !important;
     font-weight: 900 !important;
