@@ -1,43 +1,34 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import userService from '../../utils/userService';
 import Home from '../../components/Home';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import SearchPage from '../../components/SearchPage';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      user: userService.getUser()
-    };
-  }
-
-  /*--- Callback Methods ---*/
-  
-  /*--- Lifecycle Methods ---*/
-
-  render() {
+function App() {
     return (
       <div className="app">
-        <Header />
-        {/* Home */}
-        <Home/>
-          {/* Header */}
+        <Router>
+          <Header />
 
-          {/* Banner */}
-            {/* Search */}
+          <Switch>
+            <Route path="/search">
+              <SearchPage />
+            </Route>
+            <Route path="/">
+              <Home/> 
+            </Route>
+          </Switch>
 
-          {/* Cards */}
-
-          {/* Footer */}
-
-        {/* SearchPage */}
-          {/* ... */}
+          <Footer />
+        </Router>
+        
 
       </div>
     );
   }
-}
+
 
 export default App;
