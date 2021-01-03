@@ -14,7 +14,7 @@ function Search() {
     const selectionRange = {
         startDate: startDate,
         endDate: endDate,
-        key: "selection"
+        key: "selection",
     };
 
     function handleSelect(ranges){
@@ -29,15 +29,14 @@ function Search() {
             onChange={handleSelect} 
             />
             <h2>
-                Number of guests
-                <PeopleIcon />
-                <input
-                    min={0}
-                    defaultValue={2}
-                    type="number"
-                />
-                <Button>Search Airbnb</Button>
+                Number of guests<PeopleIcon />
             </h2>
+            <input
+                min={0}
+                defaultValue={2}
+                type="number"
+            />
+            <Button>Search Airbnb</Button>
         </div>
     )
 }
